@@ -85,7 +85,7 @@ func main() {
 	go countdown(tt, tm)
 
 	for t := range tt {
-		fmt.Printf("You quiz starts in %d seconds \n", t.s)
+		fmt.Printf("Your quiz starts in %d seconds \n", t.s)
 	}
 	fmt.Println("Start!")
 

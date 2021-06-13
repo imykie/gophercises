@@ -61,8 +61,6 @@ func main() {
 	flag.Parse()
 	f, err := os.Open(*file)
 	count := 0
-	timer := time.NewTimer(time.Second * time.Duration(*duration))
-	defer timer.Stop()
 
 	if err != nil {
 		log.Fatal(err)
@@ -88,6 +86,9 @@ func main() {
 		fmt.Printf("Your quiz starts in %d seconds \n", t.s)
 	}
 	fmt.Println("Start!")
+
+	timer := time.NewTimer(time.Second * time.Duration(*duration))
+	defer timer.Stop()
 
 problemLoop:
 	for i, p := range problems {
